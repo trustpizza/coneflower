@@ -22,4 +22,5 @@ number_of_developments.times do
         planned_start_date: Faker::Date.forward(days: 30),  # Example: 30 days from today
         planned_end_date: Faker::Date.forward(days: 90)  # Example: 90 days from today
     )
+    development
 end
