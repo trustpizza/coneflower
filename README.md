@@ -47,7 +47,6 @@ About the App:
         - Image of Area Before
         - Image of Area During
         - Image of Area Currently
-    - Ecotyped Plants Database ( API? )
     - Reviews
         - Author
         - Scores
@@ -57,3 +56,4 @@ About the App:
         - Type
         - Name
         
+    - Ecotyped Plants Database ( API? )

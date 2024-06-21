@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  acreage: 1.5
+  description: MyText
+  website: MyString
+  planned_start_date: 2024-06-21
+  planned_end_date: 2024-06-21
+
+two:
+  name: MyString
+  address: MyString
+  acreage: 1.5
+  description: MyText
+  website: MyString
+  planned_start_date: 2024-06-21
+  planned_end_date: 2024-06-21
