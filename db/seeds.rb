@@ -10,7 +10,7 @@
 
 Development.delete_all
 
-number_of_developments = 7
+number_of_developments = 20
 
 number_of_developments.times do
     development = Development.create!(

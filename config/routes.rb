@@ -10,5 +10,8 @@ Rails.application.routes.draw do
 
   resources :score_types, only: [:index, :show]
 
-  root 'developments#index'
+  get "home", to: "pages#home"
+  get "about-us", to: "pages#about"
+
+  root 'pages#about'
 end
