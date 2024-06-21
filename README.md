@@ -53,7 +53,9 @@ About the App:
         - Text
     - Scores
         - Starts 0-5
-        - Type
+        - ScoreType
+    - Score Type
         - Name
+        - Description
         
     - Ecotyped Plants Database ( API? )
