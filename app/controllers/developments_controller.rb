@@ -1,4 +1,5 @@
 class DevelopmentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_development, only: %i[ show edit update destroy ]
 
   # GET /developments or /developments.json
