@@ -1,4 +1,76 @@
 class ReviewsController < ApplicationController
     before_action :authenticate_user!
-
-end
+    before_action :set_development
+    before_action :set_review, only: [:show, :edit, :update, :destroy]
+  
+    # GET /developments/:development_id/reviews
+    def index
+      @reviews = @development.reviews
+    end
+  
+    # GET /developments/:development_id/reviews/:id
+    def show
+    end
+  
+    # GET /developments/:development_id/reviews/new
+    def new
+      @review = @development.reviews.build
+    end
+  
+    # GET /developments/:development_id/reviews/:id/edit
+    def edit
+    end
+  
+    # POST /developments/:development_id/reviews
+    def create
+      @review = @development.reviews.build(review_params)
+  
+      respond_to do |format|
+        if @review.save
+          format.html { redirect_to development_review_url(@development, @review), notice: "Review was successfully created." }
+          format.json { render :show, status: :created, location: development_review_url(@development, @review) }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @review.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+  
+    # PATCH/PUT /developments/:development_id/reviews/:id
+    def update
+      respond_to do |format|
+        if @review.update(review_params)
+          format.html { redirect_to development_review_url(@development, @review), notice: "Review was successfully updated." }
+          format.json { render :show, status: :ok, location: development_review_url(@development, @review) }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @review.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+  
+    # DELETE /developments/:development_id/reviews/:id
+    def destroy
+      @review.destroy
+  
+      respond_to do |format|
+        format.html { redirect_to development_reviews_url(@development), notice: "Review was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    end
+  
+    private
+  
+    def set_development
+      @development = Development.find(params[:development_id])
+    end
+  
+    def set_review
+      @review = @development.reviews.find(params[:id])
+    end
+  
+    def review_params
+      params.require(:review).permit(:title, :content) # Adjust permitted attributes as per your Review model
+    end
+  end
+  

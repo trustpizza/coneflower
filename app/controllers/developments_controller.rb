@@ -66,6 +66,6 @@ class DevelopmentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def development_params
-      params.require(:development).permit(:name, :address, :acreage, :description, :website, :planned_start_date, :planned_end_date)
+      params.require(:development).permit(:name, :address, :acreage, :description, :website, :planned_start_date, :planned_end_date, :before_image, :after_image)
     end
 end

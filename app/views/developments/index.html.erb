@@ -5,10 +5,9 @@
 
   <div id="developments" class="min-w-full">
     <% @developments.each do |development| %>
-      <%= render development %>
-      <p>
-        <%= link_to "Show this development", development, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
+      
+      <%= render "development_card", development: development %>
+      
     <% end %>
   </div>
 </div>

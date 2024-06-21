@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :developments do
-    resources :reviews, only: [:create, :update, :destroy] do
-      resources :scores, only: [:create, :update, :destroy]
-      resources :comments, only: [:create, :update, :destroy]
+    resources :reviews do
+      resources :scores
+      resources :comments
     end
   end
 
