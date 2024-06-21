@@ -28,20 +28,25 @@ About the App:
 
 
     * Glassdoor but for housing developments
-    - Users
-        - First Name
-        - last Name
-        - email
-        - password
-        - reviews
+    # Data Modeling 
+        - Users
+            - First Name
+            - last Name
+            - email
+            - password
+            - Profile pic
+            - Bio
     - Developments
         - Address
         - Name
         - Acreage
-        - Before Image
-        - During Image
-        - After Image
-        - Reviews
+        - Description
+        - Website
+        - Planned Start Date
+        - Logo
+        - Image of Area Before
+        - Image of Area During
+        - Image of Area Currently
     - Ecotyped Plants Database ( API? )
     - Reviews
         - Author
