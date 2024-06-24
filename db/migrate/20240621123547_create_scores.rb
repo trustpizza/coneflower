@@ -3,6 +3,7 @@ class CreateScores < ActiveRecord::Migration[7.1]
     create_table :scores do |t|
       t.integer :value
       t.references :review, null: false, foreign_key: true
+      t.references :score_type, null:false, foreign_key: true
 
       t.timestamps
     end

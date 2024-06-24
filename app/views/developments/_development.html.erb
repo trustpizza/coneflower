@@ -1,37 +1,48 @@
-<div id="<%= dom_id development %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= development.name %>
-  </p>
+<div class="max-w-4xl w-full p-4 block">
+    <div class="w-full border border-gray-100 shadow-md">
+      <div class="p-0 md:p-4 w-full">
+        <%= image_tag @image, class: "h-72 w-full object-cover" %>
+        <div class="w-full flex p-4 justify-between">
+          <div class="flex flex-col">
+            <div class="flex items-center">
+              <h2 class="text-xl font-bold"><%= @development.name %> - </h2>
+              <span class="pl-2 text-lg font-bold"><%= @development.review_average %></span>
+              <svg aria-hidden="true" class="w-5 h-5 text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="m12 2.694 2.119 6.857.109.352h7.294L15.898 14.2l-.277.212.103.333 2.135 6.909-5.556-4.244-.303-.232-.303.232-5.556 4.244 2.135-6.909.103-.333-.277-.212-5.624-4.296h7.295l.108-.352L12 2.694Z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+              Add A Review
+            </button>
+          </div>
+        </div>
+        <ul class="flex w-full gap-4 px-4 ">
+          <li class="hover:underline text-black">
+            Overview
+          </li>
+          <li class="hover:underline text-black">Reviews</li>
+          <li class="hover:underline text-black">Native Plants</li>
+        </ul>
+      </div>
+    </div>
+    <div class="w-full border border-gray-100 shadow-md">
+      <div class="p-4 w-full">
+        <h4 class="text-lg font-semibold">A <%= @development.acreage%> Acre Development</h4>
+        <h4 class="text-md">At <%= @development.address %> </h4>
+      </div>
+      <!-- Description -->
+      <div class="p-0 md:p-4 w-full">
+        <h4 class="text-md pb-2 font-semibold">Description: </h4>
+        <p class="text-md">
+          <%= @development.description %>
+        </p>
+      </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Address:</strong>
-    <%= development.address %>
-  </p>
+      <!-- Reviews -->
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Acreage:</strong>
-    <%= development.acreage %>
-  </p>
+      <!-- Native Plants -->
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= development.description %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Website:</strong>
-    <%= development.website %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Planned start date:</strong>
-    <%= development.planned_start_date %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Planned end date:</strong>
-    <%= development.planned_end_date %>
-  </p>
-
+    </div>
 </div>

@@ -85,9 +85,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_21_172836) do
   create_table "scores", force: :cascade do |t|
     t.integer "value"
     t.bigint "review_id", null: false
+    t.bigint "score_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["review_id"], name: "index_scores_on_review_id"
+    t.index ["score_type_id"], name: "index_scores_on_score_type_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -113,4 +115,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_21_172836) do
   add_foreign_key "reviews", "developments"
   add_foreign_key "reviews", "users"
   add_foreign_key "scores", "reviews"
+  add_foreign_key "scores", "score_types"
 end

@@ -35,6 +35,7 @@ class DevelopmentsController < ApplicationController
 
   # GET /developments/1 or /developments/1.json
   def show
+    @image = @development.current_image
   end
 
   # GET /developments/new
