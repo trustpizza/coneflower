@@ -1,0 +1,6 @@
+<%= turbo_frame_tag "description" do %>
+  <h4 class="text-md pb-2 font-semibold self-start">Reviews: </h4>
+  <% @development.reviews.each do |review| %>
+    <%= render "review", review: review %>
+  <% end %>
+<% end %>

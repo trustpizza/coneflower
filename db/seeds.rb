@@ -66,6 +66,7 @@ number_of_users.times do
     development = Development.order("RANDOM()").sample
     review_count.times do
         review = user.reviews.create!(
+            title: Faker::Company.bs,
             description: Faker::Lorem.paragraphs(number: 3).join(". "),
             development: development
             # Add any necessary attributes for reviews

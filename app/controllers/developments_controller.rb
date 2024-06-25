@@ -1,6 +1,6 @@
 class DevelopmentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_development, only: %i[ show edit update destroy ]
+  before_action :set_development, only: %i[ show edit update destroy render_description ]
 
   # GET /developments or /developments.json
   def index
@@ -83,6 +83,10 @@ class DevelopmentsController < ApplicationController
       format.html { redirect_to developments_url, notice: "Development was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def render_description
+    render partial: "custom_description", locals: { development: @development }
   end
 
   private
