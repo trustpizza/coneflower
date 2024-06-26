@@ -7,7 +7,7 @@ class DevelopmentsController < ApplicationController
     page = params[:page].to_i
     page = [page, 1].max
     @per_page = 3
-    total_pages = (Development.count / @per_page).ceil + 1
+    total_pages = (Development  .count / @per_page).ceil + 1
     # @page_numbers = (page - 2..page + 2).select { |num| num.positive? && num <= total_pages}
     # Calculate the range for @page_numbers
     nearest_count = 5
@@ -30,15 +30,7 @@ class DevelopmentsController < ApplicationController
     @page_numbers = (start_number..end_number).to_a
     offset = (page - 1) * @per_page
 
-    # Search functionality
-    @search_query = params[:search]
-    if @search_query.present?
-      @developments = Development.where("LOWER(name) LIKE ? OR LOWER(description) LIKE ?", "%#{@search_query.downcase}%", "%#{@search_query.downcase}%")
-                                .limit(@per_page)
-                                .offset(offset)
-    else
-      @developments = Development.limit(@per_page).offset(offset)
-    end
+    @developments = Development.limit(@per_page).offset(offset)
 
     @development_averages = @developments.each_with_object({}) do |development, averages|
       averages[development.id] = development.review_average

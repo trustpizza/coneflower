@@ -5,10 +5,37 @@ class ReviewsController < ApplicationController
 
   # GET /developments/:development_id/reviews
   def index
-    @reviews = @development.reviews
+    # Pagination!!!
+    page = params[:page].to_i
+    page = [page, 1].max
+    @per_page = 3
+    total_pages = (@development.reviews.count.to_f / @per_page).ceil
+  
+    # Calculate the range for @page_numbers
+    nearest_count = 5
+    start_number = [page - 2, 1].max
+    end_number = [page + 2, total_pages].min
+  
+    # Adjust the start and end numbers if necessary
+    if (end_number - start_number + 1) < nearest_count
+      if page <= 3
+        end_number = [start_number + nearest_count - 1, total_pages].min
+      elsif page >= total_pages - 2
+        start_number = [end_number - nearest_count + 1, 1].max
+      else
+        start_number = page - 2
+        end_number = page + 2
+      end
+    end
+  
+    # Generate @page_numbers array
+    @page_numbers = (start_number..end_number).to_a
+    offset = (page - 1) * @per_page
+  
+    @reviews = @development.reviews.limit(@per_page).offset(offset)
     @score_averages = @reviews.map { |review| [review.id, review.score_average] }.to_h
   end
-
+  
   # GET /developments/:development_id/reviews/:id
   def show
     @score_average = @review.score_average
