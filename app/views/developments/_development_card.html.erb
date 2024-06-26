@@ -5,10 +5,12 @@
       <div>
         <h2 class="text-xl font-bold"><%= development.name %></h2>
         <div class="flex items-center">
-          <span class="pr-2 text-lg font-bold"><%= development.review_average %></span>
-          <svg aria-hidden="true" class="w-5 h-5 text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="m12 2.694 2.119 6.857.109.352h7.294L15.898 14.2l-.277.212.103.333 2.135 6.909-5.556-4.244-.303-.232-.303.232-5.556 4.244 2.135-6.909.103-.333-.277-.212-5.624-4.296h7.295l.108-.352L12 2.694Z"></path>
-          </svg>
+          <span class="pr-2 text-lg font-bold"><%= average %></span>
+          <span class="text-yellow-400">
+            <svg aria-hidden="true" class="w-5 h-5 text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="m12 2.694 2.119 6.857.109.352h7.294L15.898 14.2l-.277.212.103.333 2.135 6.909-5.556-4.244-.303-.232-.303.232-5.556 4.244 2.135-6.909.103-.333-.277-.212-5.624-4.296h7.295l.108-.352L12 2.694Z"></path>
+            </svg>
+          </span>
         </div>
       </div>
     </div>

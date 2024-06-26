@@ -41,7 +41,7 @@
 
   <div id="developments" class="min-w-full">
     <% @developments.each do |development| %>
-      <%= render "development_card", development: development %>
+      <%= render "development_card", development: development, average: @development_averages[development.id] %>
     <% end %>
   </div>
 </div>

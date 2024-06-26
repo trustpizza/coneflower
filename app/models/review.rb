@@ -9,4 +9,10 @@ class Review < ApplicationRecord
 
   # Validations
   validates :title, :description, presence: true
+
+  def score_average
+    scores = self.scores.pluck(:value)
+    return 0 if scores.empty?
+    (scores.sum.to_f / scores.count).round(2)
+  end
 end

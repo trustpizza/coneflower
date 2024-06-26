@@ -6,10 +6,12 @@ class ReviewsController < ApplicationController
   # GET /developments/:development_id/reviews
   def index
     @reviews = @development.reviews
+    @score_averages = @reviews.map { |review| [review.id, review.score_average] }.to_h
   end
 
   # GET /developments/:development_id/reviews/:id
   def show
+    @score_average = @review.score_average
   end
 
   # GET /developments/:development_id/reviews/new

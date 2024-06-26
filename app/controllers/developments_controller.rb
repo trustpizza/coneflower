@@ -31,11 +31,13 @@ class DevelopmentsController < ApplicationController
     offset = (page - 1) * @per_page
     puts(offset)
     @developments = Development.limit(@per_page).offset(offset)
+    @development_averages = @developments.map { |development| [development.id, development.review_average] }.to_h
   end
 
   # GET /developments/1 or /developments/1.json
   def show
     @image = @development.current_image
+    @average = @development.review_average
   end
 
   # GET /developments/new

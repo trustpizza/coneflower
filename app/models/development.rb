@@ -10,11 +10,12 @@ class Development < ApplicationRecord
     end
 
     def review_average
-        scores = reviews.joins(:scores).pluck('scores.value')
-        return 0 if scores.empty?
-        (scores.sum.to_f / scores.size).round(2)
-    end
-
+        return 0 if reviews.empty?
+    
+        total_score_sum = reviews.sum(&:score_average)
+        average_score = total_score_sum / reviews.size
+        average_score.round(2)
+      end
     def current_image
       if after_image.attached?
           after_image

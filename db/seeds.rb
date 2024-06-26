@@ -10,6 +10,7 @@
 
 Development.destroy_all
 User.destroy_all
+ScoreType.destroy_all
 
 number_of_developments = 20
 number_of_users = 14
@@ -61,9 +62,11 @@ number_of_users.times do
         username: Faker::Internet.username(specifier: 5..8),
         bio: Faker::Lorem.paragraph
     )
-    # Builds a review
+end
+
+Development.all.each do |development|
     review_count = rand(range_of_reviews)
-    development = Development.order("RANDOM()").sample
+    user = User.all.sample
     review_count.times do
         review = user.reviews.create!(
             title: Faker::Company.bs,
