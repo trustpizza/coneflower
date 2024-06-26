@@ -29,8 +29,21 @@ class DevelopmentsController < ApplicationController
     # Generate @page_numbers array
     @page_numbers = (start_number..end_number).to_a
     offset = (page - 1) * @per_page
-    puts(offset)
-    @developments = Development.limit(@per_page).offset(offset)
+
+    # Search functionality
+    @search_query = params[:search]
+    if @search_query.present?
+      @developments = Development.where("LOWER(name) LIKE ? OR LOWER(description) LIKE ?", "%#{@search_query.downcase}%", "%#{@search_query.downcase}%")
+                                .limit(@per_page)
+                                .offset(offset)
+    else
+      @developments = Development.limit(@per_page).offset(offset)
+    end
+
+    @development_averages = @developments.each_with_object({}) do |development, averages|
+      averages[development.id] = development.review_average
+    end
+
     @development_averages = @developments.map { |development| [development.id, development.review_average] }.to_h
   end
 
