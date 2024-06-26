@@ -12,7 +12,11 @@
               </svg>
             </div>
           </div>
-          <%= link_to "Add a Review", new_development_review_path(@development), remote: true, data: { turbo_frame: "description" }, class: "flex justify-center items-center min-w-fit text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs md:text-sm md:px-5 md:py-2.5 md:me-2 md:mb-2 px-2 py-1 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
+          <% if user_signed_in? %>
+            <%= link_to "Add a Review", new_development_review_path(@development), remote: true, data: { turbo_frame: "description" }, class: "flex justify-center items-center min-w-fit text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs md:text-sm md:px-5 md:py-2.5 md:me-2 md:mb-2 px-2 py-1 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
+          <% else %>
+            <%= link_to "Add a Review", new_user_session_path, class: "flex justify-center items-center min-w-fit text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs md:text-sm md:px-5 md:py-2.5 md:me-2 md:mb-2 px-2 py-1 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
+          <% end %>
         </div>
         <ul data-controller="navigation" class="flex w-full gap-4 px-4">
           <li class="hover:underline text-black">
