@@ -6,12 +6,10 @@
     <ul>
       <% @results.each do |result| %>
         <li>
-          <%= link_to do %>
-            <% if result.is_a?(Development) %>
-              <%= render "developments/development_card", development: result, average: result.review_average %>
-            <% elsif result.is_a?(User) %>
-              <%= render "users/user_card", user: result %>
-            <% end %>
+          <% if result.is_a?(Development) %>
+            <ul><%= render "developments/development_card", development: result, average: result.review_average %></ul>
+          <% elsif result.is_a?(User) %>
+            <ul><%= render "users/user_card", user: result %></ul>
           <% end %>
         </li>
       <% end %>
