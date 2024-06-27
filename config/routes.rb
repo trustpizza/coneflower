@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get '/developments/:id/render_description', to: 'developments#render_description', as: 'render_description'
 
 
-    resources :developments do
+    resources :developments, only: %i[ index show ] do
       resources :reviews do
         resources :scores
         resources :comments
