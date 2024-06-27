@@ -1,67 +1,159 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
-
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  <head>
+    <style type="text/css">.turbo-progress-bar {
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: #0076ff;
+      z-index: 2147483647;
+      transition:
+        width 300ms ease-out,
+        opacity 150ms 150ms ease-in;
+      transform: translate3d(0, 0, 0);
+    }
   </style>
-</head>
+    <title>Coneflower</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="-dYUC8sz5dKZnJ9zGoNeIq8D6yDVlBzd2liywseaaFcRZsKQkkDC5biw979dkkoYeMsJyoS5u2tt3Qgos7qEdA">
+    
+    <link rel="stylesheet" href="/assets/tailwind-2df0a685e9e970a44d6d08ade2b9fd54494d601460059f14830a1c7f94be3f70.css" data-turbo-track="reload">
+<link rel="stylesheet" href="/assets/inter-font-8c3e82affb176f4bca9616b838d906343d1251adc8408efe02cf2b1e4fcf2bc4.css" data-turbo-track="reload">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon-6e5ea15c7fd5b48f18af1fcba4793ee8eed4eb4b5df2a45e6b5a2b867231b2ff.png">
+    <link rel="stylesheet" href="/assets/application-fe440406e54bdd95ec9046fd7f7b3f6803f9748857226012c8213a74c8350ae1.css" data-turbo-track="reload">
+    <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-918a6cf2f2be8ed9555c9a11eee69c7dc2f01770802815576efc931876b327fb.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "controllers/application": "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-549135e8e7c683a538c3d6d517339ba470fcfb79d62f738a0a089ba41851a554.js",
+    "controllers": "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
+    "controllers/navigation_controller": "/assets/controllers/navigation_controller-53d67fb7e4e9dd3da38db18792c03f1f43e96fad7e40b69fb1fe5e27c909ee1e.js",
+    "controllers/sections_controller": "/assets/controllers/sections_controller-1870fab45304e392d8f56510e7b6a3277dc32593ee885d59c17713f045155124.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js">
+<link rel="modulepreload" href="/assets/turbo.min-918a6cf2f2be8ed9555c9a11eee69c7dc2f01770802815576efc931876b327fb.js">
+<link rel="modulepreload" href="/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js">
+<link rel="modulepreload" href="/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-549135e8e7c683a538c3d6d517339ba470fcfb79d62f738a0a089ba41851a554.js">
+<link rel="modulepreload" href="/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js">
+<link rel="modulepreload" href="/assets/controllers/navigation_controller-53d67fb7e4e9dd3da38db18792c03f1f43e96fad7e40b69fb1fe5e27c909ee1e.js">
+<link rel="modulepreload" href="/assets/controllers/sections_controller-1870fab45304e392d8f56510e7b6a3277dc32593ee885d59c17713f045155124.js">
+<script type="module">import "application"</script>
+  </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  <body class="bg-gray-50 dark:bg-gray-800">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.turbo.min.js"></script>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a class="flex items-center space-x-3 rtl:space-x-reverse" href="http://127.0.0.1:3000/">
+      <img class="h-8" alt="Coneflower Logo" src="/assets/favicon-6e5ea15c7fd5b48f18af1fcba4793ee8eed4eb4b5df2a45e6b5a2b867231b2ff.png">
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-green-600 text-green-500 hover:underline">ConeFlower</span>
+</a>
+    <div class="flex md:order-2">
+      <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+        <img class="w-5 h-5" src="/assets/search-icon-d52dd0f454d00f7c3e9bbaad8e886fe10706053c40344b07961ced3729014cd7.svg">
+        <span class="sr-only">Search</span>
+      </button>
+      <div class="relative hidden md:block">
+        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+          <img class="w-4 h-4 text-gray-500 dark:text-gray-400" src="/assets/search-icon-d52dd0f454d00f7c3e9bbaad8e886fe10706053c40344b07961ced3729014cd7.svg">
+          <span class="sr-only">Search icon</span>
+        </div>
+        <form action="/search/index" accept-charset="UTF-8" method="get">
+          <input id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Search..." type="text" name="query">
+          <input type="submit" name="commit" value="Search" class="sr-only" data-disable-with="Search">
+</form>      </div>
+      <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <img class="h-5 w-5" src="/assets/hamburger-menu-icon-c0fda966740f158d25a7ca5cd9760b7110fdf5eb98f3eae30daa998fed23ac09.svg">
+      </button>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+      <div class="relative mt-3 md:hidden">
+        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+          <img class="w-4 h-4 text-gray-500 dark:text-gray-400" src="/assets/search-icon-d52dd0f454d00f7c3e9bbaad8e886fe10706053c40344b07961ced3729014cd7.svg">
+          <span class="sr-only">Search Icon</span>
+        </div>
+        <form class="relative" action="/search/index" accept-charset="UTF-8" method="get">
+          <input id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Search..." type="text" name="query">
+          <input type="submit" name="commit" value="Search" class="sr-only" data-disable-with="Search">
+</form>      </div>
+
+      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-green-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a class="block py-2 px-3 text-green-600 rounded hover:bg-green-100 md:hover:underline md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" href="http://127.0.0.1:3000/">Home</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 text-green-600 rounded hover:bg-green-100 md:hover:underline md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" href="http://127.0.0.1:3000/about-us">About</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 text-green-600 rounded hover:bg-green-100 md:hover:underline md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" href="http://127.0.0.1:3000/developments">Developments</a>
+        </li>
+            <a class="block py-2 px-3 text-green-600 rounded hover:bg-green-100 md:hover:underline md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" href="/moderator">Moderation</a>
+            <a class="block py-2 px-3 text-green-600 rounded hover:bg-green-100 md:hover:underline md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" href="/admin">Admin</a>
+      </ul>
+    </div>
   </div>
-</body>
-</html>
+</nav>
+
+    <p class="notice"></p>
+    <p class="alert"></p>
+    <main class="container mx-auto my-8 px-5 flex">
+      
+    
+
+
+    
+
+
+
+<main class="bg-gray-50 dark:bg-gray-900">
+  
+<div class="flex flex-col justify-center items-center px-6 mx-auto h-screen xl:px-0 dark:bg-gray-900">
+    <div class="block md:max-w-lg">
+        <img src="https://flowbite-admin-dashboard.vercel.app/images/illustrations/404.svg" alt="astronaut image">
+    </div>
+    <div class="text-center xl:max-w-4xl">
+        <h1 class="mb-3 text-2xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl dark:text-white">Page not found</h1>
+        <p class="mb-5 text-base font-normal text-gray-500 md:text-lg dark:text-gray-400">Oops! Looks like you followed a bad link. If you think this is a problem with us, please tell us.</p>
+        <a href="https://flowbite-admin-dashboard.vercel.app/" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-3 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+            <svg class="mr-2 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            Go back home
+        </a>
+    </div>
+</div>
+
+</main>
+    </main>
+    <footer class="w-full p-4 bg-white border-t border-green-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-green-800 dark:border-green-600">
+    <span class="text-sm text-green-700 sm:text-center dark:text-green-300">© 2024
+        <a class="hover:underline" href="#">ConeFlower</a>. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-green-700 dark:text-green-300 sm:mt-0">
+        <li>
+            <a href="https://github.com/trustpizza/coneflower" class="hover:underline me-4 md:me-6">Open Source</a>
+        </li>
+        <li>
+            <a class="hover:underline me-4 md:me-6" href="/about-us">About</a>
+        </li>
+        <li>
+            <a href="#" class="hidden hover:underline me-4 md:me-6">Licensing</a>
+        </li>
+        <li>
+            <a href="#" class="hover:underline">Contact</a>
+        </li>
+    </ul>
+</footer>
+
+  
+
+</body></html>
