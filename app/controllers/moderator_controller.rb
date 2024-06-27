@@ -1,4 +1,4 @@
-class ModeratorPanelController < ApplicationController
+class ModeratorController < ApplicationController
   before_action :authenticate_user!
   before_action :require_moderator_or_higher
 

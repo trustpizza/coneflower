@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'admin_panel/index'
-  get 'moderator_panel/index'
   get 'search/index'
   devise_for :users
 
@@ -17,8 +15,9 @@ Rails.application.routes.draw do
   get '/developments/:id/render_description', to: 'developments#render_description', as: 'render_description'
 
   # Moderation
-  get 'moderator', to: 'moderator_panel#index'
-  get 'admin', to: 'admin_panel#index'
+  resources :moderator, only: %i[ index ]
+  resources :admin, only: %i[ index ]
+  # get 'admin', to: 'admin_panel#index'
 
   # Pages
   get "home", to: "pages#home"
