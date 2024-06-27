@@ -1,4 +1,12 @@
-<div>
-  <h1 class="font-bold text-2xl">Developments</h1>
-  <p>Find me in app/views/moderator/developments/index.html.erb</p>
-</div>
+<%= turbo_frame_tag "moderator_frame" do %>
+  <div class="flex justify-center mb-4"> <!-- Centering container -->
+    <%= render "paginator" %>
+  </div> <!-- End of centering container -->
+
+  <div id="developments" class="min-w-full">
+    <% @developments.each do |development| %>
+      <%= render "development_card", development: development, average: @development_averages[development.id] %>
+    <% end %>
+  </div>
+<% end %>
+

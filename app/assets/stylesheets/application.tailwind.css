@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+  
+}
 /*
 
 @layer components {
@@ -11,3 +15,34 @@
 }
 
 */
+/* pagy.tailwind.css */
+
+/* Styles for Pagy pagination */
+.pagy {
+  @apply flex space-x-1 font-semibold text-sm text-green-500;
+}
+
+.pagy a:not(.gap) {
+  @apply block rounded-lg px-3 py-1 bg-green-200;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    @apply bg-green-300;
+  }
+}
+
+.pagy a:not([href]) {
+  @apply text-green-300 bg-green-100 cursor-default;
+}
+
+.pagy a.current {
+  @apply text-white bg-green-400;
+}
+
+.pagy label {
+  @apply inline-block whitespace-nowrap bg-green-200 rounded-lg px-3 py-0.5;
+}
+
+.pagy label input {
+  @apply bg-green-100 border-none rounded-md;
+}
