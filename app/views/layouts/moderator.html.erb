@@ -17,8 +17,10 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= render "shared/mod/sidebar" %>
-    <main>
-      <%= yield %>
+    <main class="p-4 sm:ml-64">
+      <div class="p-4 border-2 border-gray-200 roudned-lg dark:border-gray-700 mt-14">  
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>

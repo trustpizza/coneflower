@@ -7,12 +7,12 @@
 
     <div class="flex lg:order-2">
       <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="lg:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
-        <%= image_tag "search-icon.svg", class: "w-5 h-5" %>
+        <%= image_tag "icons/search-icon.svg", class: "w-5 h-5" %>
         <span class="sr-only">Search</span>
       </button>
       <div class="relative hidden lg:block">
         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-          <%= image_tag "search-icon", class: "w-4 h-4 text-gray-500 dark:text-gray-400" %>
+          <%= image_tag "icons/search-icon.svg", class: "w-4 h-4 text-gray-500 dark:text-gray-400" %>
           <span class="sr-only">Search icon</span>
         </div>
         <%= form_with url: search_index_path, method: :get do |form| %>
@@ -22,14 +22,14 @@
       </div>
       <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
-        <%= image_tag "hamburger-menu-icon.svg", class: "h-5 w-5" %>
+        <%= image_tag "icons/hamburger-menu-icon.svg", class: "h-5 w-5" %>
       </button>
     </div>
 
     <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-search">
       <div class="relative mt-3 lg:hidden">
         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-          <%= image_tag "search-icon.svg", class:"w-4 h-4 text-gray-500 dark:text-gray-400" %>
+          <%= image_tag "icons/search-icon.svg", class:"w-4 h-4 text-gray-500 dark:text-gray-400" %>
           <span class="sr-only">Search Icon</span>
         </div>
         <%= form_with url: search_index_path, method: :get, class: "relative" do |form| %>
