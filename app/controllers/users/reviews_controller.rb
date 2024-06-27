@@ -1,5 +1,5 @@
-class ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: %i[ new edit update destroy create ]
+class Users::ReviewsController < ApplicationController
+  # before_action :authenticate_user!, only: %i[ new edit update destroy create ]
   before_action :set_development
   before_action :set_review, only: [:show, :edit, :update, :destroy]
 

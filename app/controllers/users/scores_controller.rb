@@ -1,5 +1,5 @@
 class Users::ScoresController < ApplicationController
-  before_action :authenticate_user!, only: %i[ edit update destroy new create ] 
+  # before_action :authenticate_user!, only: %i[ edit update destroy new create ] 
 
   def index
   end
