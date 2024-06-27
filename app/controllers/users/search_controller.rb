@@ -1,4 +1,4 @@
-class SearchController < ApplicationController
+class Users::SearchController < ApplicationController
   def index
     @query = params[:query]
     @results = []

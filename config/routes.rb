@@ -1,18 +1,25 @@
 Rails.application.routes.draw do
-  get 'search/index'
   devise_for :users
 
-  resources :search, only: [ :index ]
-  # resources :score_types, only: [:index, :show]
+  # Users Scopes
+  scope module: "users" do 
+    resources :search, only: [ :index ]
+    
+    get '/developments/:id/render_description', to: 'developments#render_description', as: 'render_description'
 
-  resources :developments do
-    resources :reviews do
-      resources :scores
-      resources :comments
+
+    resources :developments do
+      resources :reviews do
+        resources :scores
+        resources :comments
+      end
     end
   end
-  # Define a custom route for rendering description
-  get '/developments/:id/render_description', to: 'developments#render_description', as: 'render_description'
+
+  # Moderation
+  resources :moderator, only: %i[ index ]
+  resources :admin, only: %i[ index ]
+  # Moderator Links
   namespace :moderator do 
     resources :developments do
       resources :reviews do
@@ -21,9 +28,8 @@ Rails.application.routes.draw do
       end
     end
   end
-  # Moderation
-  resources :moderator, only: %i[ index ]
-  resources :admin, only: %i[ index ]
+
+
   # get 'admin', to: 'admin_panel#index'
 
   # Pages

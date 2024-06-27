@@ -1,4 +1,4 @@
-class DevelopmentsController < ApplicationController
+class Users::DevelopmentsController < ApplicationController
   before_action :authenticate_user!, only: %i[ edit update destroy new create ]
   before_action :set_development, only: %i[ show edit update destroy render_description ]
 
@@ -107,3 +107,4 @@ class DevelopmentsController < ApplicationController
       params.require(:development).permit(:name, :address, :acreage, :description, :website, :planned_start_date, :planned_end_date, :before_image, :after_image)
     end
 end
+

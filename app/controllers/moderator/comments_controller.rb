@@ -1,4 +1,4 @@
-class Moderator::CommentsController < ApplicationController
+class Moderator::CommentsController < ModeratorController
   def index
   end
 
