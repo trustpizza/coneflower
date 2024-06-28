@@ -26,32 +26,41 @@ number_of_score_types.times do
 end
 
 number_of_developments.times do
-    development = Development.create!(
-        name: Faker::Company.name,
-        address: Faker::Address.full_address,
-        acreage: Faker::Number.decimal_part(digits: 2),  # Example for acreage
-        description: Faker::Lorem.paragraphs(number: 5).join(". "),
-        website: Faker::Internet.url,
-        planned_start_date: Faker::Date.forward(days: 30),  # Example: 30 days from today
-        planned_end_date: Faker::Date.forward(days: 90),  # Example: 90 days from today
-        ecosystem: Faker::Company::industry
-    )
+  # Create the development
+  development = Development.create!(
+    name: Faker::Company.name,
+    acreage: Faker::Number.decimal_part(digits: 2),  # Example for acreage
+    description: Faker::Lorem.paragraphs(number: 5).join(". "),
+    website: Faker::Internet.url,
+    planned_start_date: Faker::Date.forward(days: 30),  # Example: 30 days from today
+    planned_end_date: Faker::Date.forward(days: 90),  # Example: 90 days from today
+    ecosystem: Faker::Company.industry
+  )
 
-    # Images
-    logo_url = Faker::LoremFlickr.image(size: "400x400", search_terms: ["logo", "company"])
-    logo_io = URI.open(logo_url)
+  # Create the address and associate it with the development
+  address = Address.create!(
+    street_address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state,
+    postal_code: Faker::Address.zip_code,
+    country: Faker::Address.country,
+    addressable: development
+  )
 
-    development.logo.attach(io: logo_io, filename: File.basename(logo_url))
+  # Attach images
+  logo_url = Faker::LoremFlickr.image(size: "400x400", search_terms: ["logo", "company"])
+  logo_io = URI.open(logo_url)
+  development.logo.attach(io: logo_io, filename: File.basename(logo_url))
 
-    before_img_url = Faker::LoremFlickr.image(size: "800x1200", search_terms: ['housing', 'development'])
-    before_img_io = URI.open(before_img_url)
+  before_img_url = Faker::LoremFlickr.image(size: "800x1200", search_terms: ['housing', 'development'])
+  before_img_io = URI.open(before_img_url)
+  development.before_image.attach(io: before_img_io, filename: File.basename(before_img_url))
 
-    after_image_url = Faker::LoremFlickr.image(size:"800x1200", search_terms: ["housing", "development"])
-    after_image_io = URI.open(after_image_url)
-
-    development.after_image.attach(io:after_image_io, filename: File.basename(after_image_url))
-    development.before_image.attach(io:before_img_io, filename: File.basename(before_img_url))
+  after_image_url = Faker::LoremFlickr.image(size: "800x1200", search_terms: ["housing", "development"])
+  after_image_io = URI.open(after_image_url)
+  development.after_image.attach(io: after_image_io, filename: File.basename(after_image_url))
 end
+
 
 number_of_users.times do
     password = Faker::Internet.password(min_length: 8)

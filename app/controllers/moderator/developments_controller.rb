@@ -49,6 +49,6 @@ class Moderator::DevelopmentsController < ModeratorController
 
   # Only allow a list of trusted parameters through.
   def development_params
-    params.require(:development).permit(:name, :address, :acreage, :description, :website, :planned_start_date, :planned_end_date, :before_image, :after_image)
+    params.require(:development).permit(:name, :address, :acreage, :description, :website, :planned_start_date, :planned_end_date, :before_image, :after_image, address_attributes: [:id, :street_address, :city, :state, :postal_code, :country])
   end
 end

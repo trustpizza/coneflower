@@ -3,7 +3,7 @@
         <div class="p-4 w-full border border-gray-100 shadow-md">
             <div class="w-full">
                 <h4 class="text-lg font-semibold">A <%= @development.acreage%> Acre Development</h4>
-                <h4 class="text-md">At <%= @development.address %> </h4>
+                <%= render "users/addresses/address", address: @development.address %>
             </div>
             <div class="mt-4 w-full" id="description">
                 <h4 class="text-md pb-2 font-semibold">Description: </h4>

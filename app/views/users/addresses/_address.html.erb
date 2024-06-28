@@ -1,0 +1,9 @@
+<span class="text-lg">
+    <% if address %>
+        <p><%= address.street_address %></p>
+        <p><%= address.city %>, <%= address.state %> <%= address.postal_code %></p>
+        <p><%= address.country %></p>
+    <% else %>
+        <p class="text-lg text-red-500">No address available.</p>
+    <% end %>
+</span>

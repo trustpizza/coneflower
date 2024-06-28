@@ -3,6 +3,11 @@ class Development < ApplicationRecord
     has_one_attached :after_image#, required: true
     has_one_attached :logo
 
+    # address
+    has_one :address, as: :addressable, dependent: :destroy
+    accepts_nested_attributes_for :address
+
+    #reviews
     has_many :reviews, dependent: :destroy
 
     def images

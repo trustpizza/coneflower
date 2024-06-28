@@ -16,8 +16,28 @@
   </div>
 
   <div class="space-y-2">
-    <%= form.label :address, class: "block font-medium text-gray-700" %>
-    <%= form.text_field :address, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
+    <%= form.fields_for :address do |address_form| %>
+      <div class="space-y-2">
+        <%= address_form.label :street_address, class: "block font-medium text-gray-700" %>
+        <%= address_form.text_field :street_address, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
+      </div>
+      <div class="space-y-2">
+        <%= address_form.label :city, class: "block font-medium text-gray-700" %>
+        <%= address_form.text_field :city, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
+      </div>
+      <div class="space-y-2">
+        <%= address_form.label :state, class: "block font-medium text-gray-700" %>
+        <%= address_form.text_field :state, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
+      </div>
+      <div class="space-y-2">
+        <%= address_form.label :postal_code, class: "block font-medium text-gray-700" %>
+        <%= address_form.text_field :postal_code, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
+      </div>
+      <div class="space-y-2">
+        <%= address_form.label :country, class: "block font-medium text-gray-700" %>
+        <%= address_form.text_field :country, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
+      </div>
+    <% end %>
   </div>
 
   <div class="space-y-2">
