@@ -52,9 +52,6 @@
           <% if current_user.moderator? || current_user.admin? || current_user.owner? %>
             <%= link_to 'Moderation', moderator_index_path, class: 'block py-2 px-3 text-green-600 rounded hover:bg-green-100 lg:hover:underline lg:hover:bg-transparent lg:hover:text-green-700 lg:p-0 lg:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700' %>
           <% end %>
-          <% if current_user.admin? || current_user.owner? %>
-            <%= link_to 'Admin', admin_index_path, class: 'block py-2 px-3 text-green-600 rounded hover:bg-green-100 lg:hover:underline lg:hover:bg-transparent lg:hover:text-green-700 lg:p-0 lg:dark:hover:text-green-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700' %>
-          <% end %>
         <% end %>
       </ul>
     </div>

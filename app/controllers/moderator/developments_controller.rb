@@ -1,5 +1,5 @@
 class Moderator::DevelopmentsController < ModeratorController
-  before_action :set_development, only: %i[ edit update show ]
+  before_action :set_development, only: %i[ edit update show destroy ]
 
   def index
     @pagy, @developments = pagy(Development.all, items: 3)
@@ -23,6 +23,12 @@ class Moderator::DevelopmentsController < ModeratorController
   end
 
   def destroy
+    @development.destroy
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
+    redirect_to moderator_developments_path
   end
 
   private

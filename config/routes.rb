@@ -18,7 +18,6 @@ Rails.application.routes.draw do
 
   # Moderation
   resources :moderator, only: %i[ index ]
-  resources :admin, only: %i[ index ]
   # Moderator Links
   namespace :moderator do 
     resources :developments do

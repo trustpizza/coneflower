@@ -1,9 +1,8 @@
-<%= form_with(model: [:moderator, development], class: "contents") do |form| %>
+<%= form_with(model: [:moderator, development], class: "space-y-6") do |form| %>
   <% if development.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(development.errors.count, "error") %> prohibited this development from being saved:</h2>
-
-      <ul>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-4 py-3 rounded-lg">
+      <h2 class="font-semibold"><%= pluralize(development.errors.count, "error") %> prohibited this development from being saved:</h2>
+      <ul class="mt-2 list-disc list-inside">
         <% development.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,52 +10,52 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="space-y-2">
+    <%= form.label :name, class: "block font-medium text-gray-700" %>
+    <%= form.text_field :name, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :address %>
-    <%= form.text_field :address, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="space-y-2">
+    <%= form.label :address, class: "block font-medium text-gray-700" %>
+    <%= form.text_field :address, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :acreage %>
-    <%= form.text_field :acreage, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="space-y-2">
+    <%= form.label :acreage, class: "block font-medium text-gray-700" %>
+    <%= form.text_field :acreage, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :description %>
-    <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="space-y-2">
+    <%= form.label :description, class: "block font-medium text-gray-700" %>
+    <%= form.text_area :description, rows: 4, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :website %>
-    <%= form.text_field :website, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="space-y-2">
+    <%= form.label :website, class: "block font-medium text-gray-700" %>
+    <%= form.text_field :website, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :planned_start_date %>
-    <%= form.date_field :planned_start_date, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="space-y-2">
+    <%= form.label :planned_start_date, class: "block font-medium text-gray-700" %>
+    <%= form.date_field :planned_start_date, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :planned_end_date %>
-    <%= form.date_field :planned_end_date, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="space-y-2">
+    <%= form.label :planned_end_date, class: "block font-medium text-gray-700" %>
+    <%= form.date_field :planned_end_date, class: "block w-full shadow-sm rounded-md border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :before_image %>
-    <%= form.file_field :before_image %>
+  <div class="space-y-2">
+    <%= form.label :before_image, class: "block font-medium text-gray-700" %>
+    <%= form.file_field :before_image, class: "block w-full text-gray-500" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :after_image %>
-    <%= form.file_field :after_image %>
+  <div class="space-y-2">
+    <%= form.label :after_image, class: "block font-medium text-gray-700" %>
+    <%= form.file_field :after_image, class: "block w-full text-gray-500" %>
   </div>
 
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  <div class="mt-6">
+    <%= form.submit "Save Development", class: "inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-white hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-800" %>
   </div>
 <% end %>

@@ -1,11 +1,13 @@
-<%= turbo_frame_tag "" do %>
+<%= turbo_frame_tag "moderator_frame" do %>
   <div class="mx-auto md:w-2/3 w-full">
-    <h1 class="font-bold text-4xl">Editing development</h1>
+    <h1 class="font-bold text-4xl mb-6">Editing Development</h1>
+
+    <div class="mt-6 space-x-2 flex">
+      <%= button_to "Delete", moderator_development_path(@development), method: :delete, data: { confirm: 'Are you sure?' }, class: "rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium hover:bg-red-700" %>
+      <%= link_to "Show this development", moderator_development_path(@development), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium hover:bg-gray-200" %>
+      <%= link_to "Back to developments", moderator_developments_path, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium hover:bg-gray-200" %>
+    </div>
 
     <%= render "form", development: @development %>
-
-    <%= link_to "Show this development", @development, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Delete", @development, class: "" %>
-    <%= link_to "Back to developments", developments_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 <% end %>
