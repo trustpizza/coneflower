@@ -1,18 +1,19 @@
 <!-- app/views/search/index.html.erb -->
-<div class="container mx-auto flex-grow">
+<div class="w-full">
   <!-- Display search results -->
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-center mb-4"> <!-- Centering container -->
+    <%= render "users/developments/paginator", pagy: @pagy %>
+  </div> <!-- End of centering container -->
+
   <% if @results.present? %>
-    <h2 class="text-xl font-bold mt-4 mb-2">Search Results:</h2>
-    <ul>
+    <div class="min-w-full">
       <% @results.each do |result| %>
-        <li>
-          <% if result.is_a?(Development) %>
-            <ul><%= render "developments/development_card", development: result, average: result.review_average %></ul>
-          <% elsif result.is_a?(User) %>
-            <ul><%= render "users/user_card", user: result %></ul>
-          <% end %>
-        </li>
+          <%= render "users/developments/development_card", development: result, average: result.review_average %>
       <% end %>
-    </ul>
+    </div>
   <% end %>
 </div>

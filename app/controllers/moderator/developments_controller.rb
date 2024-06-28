@@ -1,5 +1,6 @@
 class Moderator::DevelopmentsController < ModeratorController
-  before_action :set_development, only: %i[ edit update show destroy ]
+  before_action :set_development, only: %i[ edit update show destroy toggle_published ]
+  before_action :require_admin_or_higher, only: %i[ destroy ]
 
   def index
     @pagy, @developments = pagy(Development.all, items: 3)
@@ -29,6 +30,15 @@ class Moderator::DevelopmentsController < ModeratorController
       format.turbo_stream
     end
     redirect_to moderator_developments_path
+  end
+
+  def toggle_published
+    @development.update(published: !@development.published)
+    respond_to do |format|
+      format.html { redirect_to moderator_development_url(@development), notice: 'Development status was successfully updated.' }
+      format.turbo_stream { redirect_to moderator_development_url(@development), notice: "Development status successfully updated." }
+      format.json { head :no_content }
+    end
   end
 
   private

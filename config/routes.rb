@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     
     get '/developments/:id/render_description', to: 'developments#render_description', as: 'render_description'
 
-
     resources :developments, only: %i[ index show ] do
       resources :reviews do
         resources :scores
@@ -21,6 +20,9 @@ Rails.application.routes.draw do
   # Moderator Links
   namespace :moderator do 
     resources :developments do
+      member do 
+        patch :toggle_published
+      end
       resources :reviews do
         resources :scores
         resources :comments

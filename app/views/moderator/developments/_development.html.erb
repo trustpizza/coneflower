@@ -12,7 +12,18 @@
               </svg>
             </div>
           </div>
-          <%= link_to "Edit", edit_moderator_development_path(@development), remote: true, data: { turbo_frame: "moderator_frame" }, class: "flex justify-center items-center min-w-fit text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs md:text-sm md:px-5 md:py-2.5 md:me-2 md:mb-2 px-2 py-1 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
+          <div class="flex space-x-2">
+            <div>
+              <% if @development.published %>
+                <%= button_to "Unpublish", toggle_published_moderator_development_path, remote: true, method: :patch, class: "flex justify-center items-center min-w-fit text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs md:text-sm md:px-5 md:py-2.5 px-2 py-1 dark:bg-red-500 dark:hover:bg-red-600 focus:outline-none dark:focus:ring-red-800 transition ease-in-out duration-150" %>
+              <% else %>
+                <%= button_to "Publish", toggle_published_moderator_development_path, remote: true, method: :patch, class: "flex justify-center items-center min-w-fit text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-xs md:text-sm md:px-5 md:py-2.5 px-2 py-1 dark:bg-green-500 dark:hover:bg-green-600 focus:outline-none dark:focus:ring-green-800 transition ease-in-out duration-150" %>
+              <% end %>
+            </div>
+            <div>
+              <%= link_to "Edit", edit_moderator_development_path(@development), remote: true, data: { turbo_frame: "moderator_frame" }, class: "flex justify-center items-center min-w-fit text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs md:text-sm md:px-5 md:py-2.5 px-2 py-1 dark:bg-blue-500 dark:hover:bg-blue-600 focus:outline-none dark:focus:ring-blue-800 transition ease-in-out duration-150" %>
+            </div>
+          </div>
         </div>
         <ul data-controller="navigation" class="flex w-full gap-4 px-4">
           <li class="hover:underline text-black">

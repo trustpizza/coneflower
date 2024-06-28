@@ -8,8 +8,7 @@ module.exports = {
     './app/views/**/*.{erb,haml,html,slim}',
     './node_modules/flowbite/**/*.js',
     "./node_modules/flowbite/**/*.js",
-    "./app/assets/images/*.svg",
-    "./app/assets/stylesheets/pagy.tailwind.css"
+    "./app/assets/images/**/*.svg",
   ],
   theme: {
     extend: {
