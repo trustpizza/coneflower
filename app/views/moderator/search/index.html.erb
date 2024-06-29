@@ -1,0 +1,23 @@
+<%= turbo_frame_tag "moderator_frame" do %>
+<div class="w-full">
+  <!-- Display search results -->
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+
+  <div class="flex justify-center mb-4"> <!-- Centering container -->
+    <%= render "moderator/developments/paginator", pagy: @pagy %>
+  </div> <!-- End of centering container -->
+
+  <%= render "moderator/search/development_form" %>
+
+  <% if @results.present? %>
+    <div class="min-w-full">
+      <% @results.each do |result| %>
+          <%= render "moderator/developments/development_card", development: result, average: result.review_average %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<% end %>

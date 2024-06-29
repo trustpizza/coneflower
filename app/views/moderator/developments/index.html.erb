@@ -3,6 +3,8 @@
     <%= render "paginator" %>
   </div> <!-- End of centering container -->
 
+  <%= render "moderator/search/development_form" %>
+
   <div id="developments" class="min-w-full">
     <% @developments.each do |development| %>
       <%= render "development_card", development: development, average: @development_averages[development.id] %>

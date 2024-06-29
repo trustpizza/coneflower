@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   # Moderation
   resources :moderator, only: %i[ index ]
   # Moderator Links
-  namespace :moderator do 
+  namespace :moderator do
+    resources :search, only: [ :index ]
     resources :developments do
       member do 
         patch :toggle_published
