@@ -1,14 +1,12 @@
-<%= turbo_frame_tag "moderator_frame" do %>
-  <div class="flex justify-center mb-4"> <!-- Centering container -->
-    <%= render "paginator" %>
-  </div> <!-- End of centering container -->
+<div class="flex justify-center mb-4"> <!-- Centering container -->
+  <%= render "paginator" %>
+</div> <!-- End of centering container -->
 
-  <%= render "moderator/search/development_form" %>
+<%= render "moderator/search/development_form" %>
 
-  <div id="developments" class="min-w-full">
-    <% @developments.each do |development| %>
-      <%= render "development_card", development: development, average: @development_averages[development.id] %>
-    <% end %>
-  </div>
-<% end %>
+<div id="developments" class="min-w-full">
+  <% @developments.each do |development| %>
+    <%= render "development_card", development: development, average: @development_averages[development.id] %>
+  <% end %>
+</div>
 
