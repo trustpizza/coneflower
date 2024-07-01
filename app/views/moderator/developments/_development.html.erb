@@ -30,7 +30,7 @@
             <%= link_to "Description", moderator_development_path(@development), remote: true, class: "underline font-medium text-gray-600 hover:underline", data: { navigation_target: "link", turbo_frame: "description" } %>
           </li>
           <li class="hover:underline text-black">
-            <%= link_to "Reviews", moderator_development_reviews_path(@development), class: "font-medium text-gray-600 hover:underline", data: { navigation_target: "link", turbo_frame: "description" } %>
+            <%= link_to "Reviews", moderator_development_reviews_path(@development), remote: true, class: "font-medium text-gray-600 hover:underline", data: { navigation_target: "link", turbo_frame: "description" } %>
           </li>
           <li class="hover:underline text-black">
             <button class="font-medium text-gray-600 hover:underline">Native Plants</button>

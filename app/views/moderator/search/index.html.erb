@@ -14,8 +14,14 @@
 
   <% if @results.present? %>
     <div class="min-w-full">
-      <% @results.each do |result| %>
-          <%= render "moderator/developments/development_card", development: result, average: result.review_average %>
+      <% if @search_type == "developments" %>
+        <% @results.each do |result| %>
+            <%= render "moderator/developments/development_card", development: result, average: result.review_average %>
+        <% end %>
+      <% else %>
+        <% @results.each do |result| %>
+          <%= render "moderator/users/user", user: result %>
+        <% end %>
       <% end %>
     </div>
   <% end %>

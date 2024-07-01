@@ -1,0 +1,14 @@
+<%= turbo_frame_tag "moderator_frame" do %>
+  <div class="flex justify-center mb-4"> <!-- Centering container -->
+    <%= render "paginator" %>
+  </div> <!-- End of centering container -->
+
+  <%= render "moderator/search/user_form" %>
+
+<div id="users" class="min-w-full">
+  <% @users.each do |user| %>
+    <%= render user %>
+  <% end %>
+</div>
+
+<% end %>

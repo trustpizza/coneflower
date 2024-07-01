@@ -1,4 +1,5 @@
 class Moderator::CommentsController < ModeratorController
+  
   def index
   end
 

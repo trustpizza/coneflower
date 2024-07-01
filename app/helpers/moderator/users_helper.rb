@@ -1,0 +1,2 @@
+module Moderator::UsersHelper
+end

@@ -29,6 +29,13 @@ Rails.application.routes.draw do
         resources :comments
       end
     end
+    # User management
+    resources :users, only: %i[ index show ] do 
+      member do
+        patch :ban
+        patch :unban
+      end
+    end
   end
 
 
