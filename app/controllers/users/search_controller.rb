@@ -11,6 +11,9 @@ class Users::SearchController < ApplicationController
         ),
         items: 3
       )
+      if !@results.present?
+        redirect_to search_index_path, notice: "The following search returned zero results."
+      end
     end 
   end
 end
