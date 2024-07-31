@@ -12,6 +12,7 @@ class Development < ApplicationRecord
 
     def images
         images = [ before_image, after_image]
+        images
     end
 
     def review_average
