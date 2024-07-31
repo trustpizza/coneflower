@@ -5,7 +5,7 @@
       <%= image_tag "favicon.png", class: "h-8", alt: "Coneflower Logo" %>
       <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-green-600 text-green-500 hover:underline">ConeFlower</span>
     <% end %>
-        <!-- User nav section -->
+    <!-- User nav section -->
     <div class="lg:justify-self-end flex items-center lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
       <% if user_signed_in? %>
         <button type="button" class="flex text-sm bg-gray-800 rounded-full lg:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
@@ -13,7 +13,7 @@
           <% if current_user.profile.profile_picture.attached? %>
             <%= image_tag current_user.profile.profile_picture, class: "w-8 h-8 rounded-full", alt: "User Photo" %>
           <% else %>
-            <!-- Default Photo -->
+            <%= image_tag "default-user", class: "w-8 h-8 rounded-full bg-white border", alt: "User Photo" %>
           <% end %>
         </button>
 
