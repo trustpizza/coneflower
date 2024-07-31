@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post 'set_location', to: 'locations#set'
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   # Users Scopes
