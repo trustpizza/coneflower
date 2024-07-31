@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .grid-cols-custom {
-    grid-template-columns: 1fr auto 1fr;
-  }
-}
 
 @layer base {
   
