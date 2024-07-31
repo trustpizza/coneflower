@@ -68,9 +68,17 @@ number_of_users.times do
         email: Faker::Internet.unique.email,
         password: password,
         password_confirmation: password,
-        bio: Faker::Lorem.paragraph
     )
-end
+    profile_pic = Faker::LoremFlickr.image(size: "400x400", search_terms: ["person"])
+    profile_io = URI.open(profile_pic)
+    
+    profile = user.create_profile!(  # Correctly create the profile for the user
+      username: Faker::Internet.username,
+      biography: Faker::Lorem.sentence,  # Changed to `Faker::Lorem.sentence` for biography
+    )
+    
+    profile.profile_picture.attach(io: profile_io, filename: File.basename(profile_pic))
+  end
 
 Development.all.each do |development|
     review_count = rand(range_of_reviews)

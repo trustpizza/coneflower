@@ -1,5 +1,5 @@
 class Users::ProfilesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[ show ]
 
   def new
     if current_user.profile

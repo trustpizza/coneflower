@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # Users Scopes
   scope module: "users" do 
-    resources :profiles, only: %i[ show edit update create new ]
+    resources :profiles, only: %i[ show update edit ]
 
     resources :search, only: [ :index ]
     

@@ -7,7 +7,9 @@
     <%= render "paginator" %>
   </div> <!-- End of centering container -->
 
-  <div class="flex justify-center mb-4"><%= render "users/search/form" %></div>
+  <div class="flex justify-center mb-4">
+    <%= render "users/search/form" %>
+  </div>
 
   <div id="developments" class="min-w-full">
     <% @developments.each do |development| %>
