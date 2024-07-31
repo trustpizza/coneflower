@@ -66,5 +66,5 @@ class Development < ApplicationRecord
         errors.add(:logo, "should be less than 2MB")
       end
     end
-  end
+end
   
