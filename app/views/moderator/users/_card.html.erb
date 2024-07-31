@@ -4,15 +4,15 @@
     <div class="flex flex-col items-center pb-10">
         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie image"/>
         <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
-            <%= user.username %> 
+            Username
         </h5>
         <span class="text-sm text-gray-500 dark:text-gray-400"><%= user.email %></span>
         <div class="flex mt-4 md:mt-6">
             <% if user.banned? %>
-            <%= button_to "Unban User", unban_moderator_user_path(user), method: :patch,
+                <%= button_to "Unban User", toggle_ban_moderator_user_path(user), method: :patch,
                             class: "inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-green-500 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" %>
             <% else %>
-            <%= button_to "Ban User", ban_moderator_user_path(user), method: :patch,
+                <%= button_to "Ban User", toggle_ban_moderator_user_path(user), method: :patch,
                             class: "inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" %>
             <% end %>
 

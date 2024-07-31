@@ -17,13 +17,22 @@
         <!-- Dropdown menu -->
           <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
             <div class="px-4 py-3">
-              <span class="block text-sm text-gray-900 dark:text-white"><%= current_user.username %></span>
+              <span class="block text-sm text-gray-900 dark:text-white">Username</span>
               <span class="block text-sm  text-gray-500 truncate dark:text-gray-400"><%= current_user.email %></span>
             </div>
             <ul class="py-2" aria-labelledby="user-menu-button">
               <li>
                 <%= link_to "Settings", edit_user_registration_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" %>
               </li>
+              <% if current_user.profile %>
+                <li>
+                  <%= link_to "Profile", edit_profile_path(current_user.profile), class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to "Profile", new_profile_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" %>
+                </li>
+              <% end %>
               <li>
                 <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "w-full flex self-start block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" %>
               </li>

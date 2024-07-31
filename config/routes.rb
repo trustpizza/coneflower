@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   # Users Scopes
   scope module: "users" do 
+    resources :profiles, only: %i[ show edit update create new ]
+
     resources :search, only: [ :index ]
     
     get '/developments/:id/render_description', to: 'developments#render_description', as: 'render_description'
@@ -32,8 +34,7 @@ Rails.application.routes.draw do
     # User management
     resources :users, only: %i[ index show ] do 
       member do
-        patch :ban
-        patch :unban
+        patch :toggle_ban
       end
     end
   end
@@ -43,7 +44,7 @@ Rails.application.routes.draw do
 
   # Pages
   get "home", to: "pages#home"
-  get "about-us", to: "pages#about"
+  get "about_us", to: "pages#about"
   get "contact", to: "pages#contact"
 
   root 'pages#about'

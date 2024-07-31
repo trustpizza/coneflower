@@ -16,7 +16,7 @@ class Moderator::SearchController < ApplicationController
         case @search_type
         when "users"
           @pagy, @results = pagy(
-            User.where("LOWER(username) LIKE ?", "%#{@query.downcase}%"),
+            User.where("LOWER(email) LIKE ?", "%#{@query.downcase}%"),
             items: 3
           )
         else

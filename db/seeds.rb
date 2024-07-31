@@ -68,7 +68,6 @@ number_of_users.times do
         email: Faker::Internet.unique.email,
         password: password,
         password_confirmation: password,
-        username: Faker::Internet.username(specifier: 5..8),
         bio: Faker::Lorem.paragraph
     )
 end
