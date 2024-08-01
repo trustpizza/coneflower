@@ -74,3 +74,7 @@ gem "devise", "~> 4.9"
 gem "faker", "~> 3.4"
 
 gem "pagy", "~> 8.6"
+
+gem "geocoder", "~> 1.8"
+
+gem "csv", "~> 3.3"

@@ -11,7 +11,7 @@ class Development < ApplicationRecord
     has_many :reviews, dependent: :destroy
   
     # Validations
-    validate :attached_images
+    # validate :attached_images
     validate :logo_format
     validate :image_size
   

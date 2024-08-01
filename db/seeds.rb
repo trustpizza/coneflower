@@ -18,6 +18,11 @@ range_of_reviews = (3..14)
 number_of_score_types = 5
 number_of_scores = 3
 
+addresses = []
+CSV.foreach('db/new_england_addresses.csv', headers: true) do |row|
+  addresses << row.to_h
+end
+
 number_of_score_types.times do
     ScoreType.create!(
         name: Faker::Lorem.unique.word,
@@ -25,7 +30,7 @@ number_of_score_types.times do
     )
 end
 
-number_of_developments.times do
+addresses.each do |address_data|
   # Create the development
   development = Development.create!(
     name: Faker::Company.name,
@@ -36,14 +41,14 @@ number_of_developments.times do
     planned_end_date: Faker::Date.forward(days: 90),  # Example: 90 days from today
     ecosystem: Faker::Company.industry
   )
-
+  # Get an actual street location
   # Create the address and associate it with the development
   address = Address.create!(
-    street_address: Faker::Address.street_address,
-    city: Faker::Address.city,
-    state: Faker::Address.state,
-    postal_code: Faker::Address.zip_code,
-    country: Faker::Address.country,
+    street_address: address_data["street_address"],
+    city: address_data["city"],
+    state: address_data["state"],
+    postal_code: address_data["postal_code"],
+    country: address_data["country"],
     addressable: development
   )
 
