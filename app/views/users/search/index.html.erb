@@ -9,6 +9,8 @@
     <div class="flex justify-center mb-4"> <!-- Centering container -->
       <%= render "users/developments/paginator", pagy: @pagy %>
     </div> <!-- End of centering container -->
+  <% else %>
+    <%= @address %>
   <% end %>
 
   <div class="flex justify-center mb-4 w-full">
