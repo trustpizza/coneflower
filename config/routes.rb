@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       end
     end
   end
-
+  
   # Moderation
   resources :moderator, only: %i[ index ]
   # Moderator Links

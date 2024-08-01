@@ -11,7 +11,7 @@
     <%= render "users/search/form" %>
   </div>
 
-  <div id="developments" class="min-w-full">
+  <div id="developments" class="min-w-full", data-controller="geolocation">
     <% @developments.each do |development| %>
       <%= render "development_card", development: development, average: @development_averages[development.id] %>
     <% end %>
